@@ -1135,5 +1135,11 @@ module.exports = grammar({
         field('command', choice('\\text', '\\intertext', 'shortintertext')),
         field('content', $.curly_group)
       ),
+
+    lua_directive: $ =>
+      seq(
+        field('command', choice('\\directlua', '\\latelua')),
+        field('code', $.curly_group)
+      )
   },
 });
