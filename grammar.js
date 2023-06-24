@@ -339,6 +339,8 @@ module.exports = grammar({
 
     curly_group_text: $ => seq('{', field('text', $.text), '}'),
 
+    curly_group_raw: $ => seq('{', field('raw_content', $.curly_group_raw_content), '}'),
+
     curly_group_text_list: $ =>
       seq('{', sepBy(field('text', $.text), ','), '}'),
 
@@ -398,6 +400,16 @@ module.exports = grammar({
           )
         )
       ),
+
+    curly_group_raw_content: $ =>
+      repeat1(
+        choice(
+          $.no_curly_braces,
+          $.curly_group_raw,
+        )
+      ),
+
+    no_curly_braces: $ => /[^\{\}]+/,
 
     word: $ => /[^\s\\%\{\},\$\[\]\(\)=\#_\^\-\+\/\*]+/,
 
@@ -597,6 +609,7 @@ module.exports = grammar({
         $.color_set_definition,
         $.color_reference,
         $.tikz_library_import,
+        $.lua_directive,
         $.generic_command
       ),
 
@@ -1139,7 +1152,7 @@ module.exports = grammar({
     lua_directive: $ =>
       seq(
         field('command', choice('\\directlua', '\\latelua')),
-        field('code', $.curly_group)
+        field('lua_code', $.curly_group_raw)
       )
   },
 });
