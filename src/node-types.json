@@ -380,6 +380,10 @@
           "named": true
         },
         {
+          "type": "lua_directive",
+          "named": true
+        },
+        {
           "type": "math_delimiter",
           "named": true
         },
@@ -731,6 +735,10 @@
           "named": true
         },
         {
+          "type": "lua_directive",
+          "named": true
+        },
+        {
           "type": "math_delimiter",
           "named": true
         },
@@ -1066,6 +1074,10 @@
         },
         {
           "type": "listing_environment",
+          "named": true
+        },
+        {
+          "type": "lua_directive",
           "named": true
         },
         {
@@ -1802,6 +1814,10 @@
           "named": true
         },
         {
+          "type": "lua_directive",
+          "named": true
+        },
+        {
           "type": "math_delimiter",
           "named": true
         },
@@ -2072,6 +2088,10 @@
           "named": true
         },
         {
+          "type": "lua_directive",
+          "named": true
+        },
+        {
           "type": "math_delimiter",
           "named": true
         },
@@ -2168,6 +2188,41 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "curly_group_raw",
+    "named": true,
+    "fields": {
+      "raw_content": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "curly_group_raw_content",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "curly_group_raw_content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "curly_group_raw",
+          "named": true
+        },
+        {
+          "type": "no_curly_braces",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -2340,6 +2395,10 @@
         },
         {
           "type": "listing_environment",
+          "named": true
+        },
+        {
+          "type": "lua_directive",
           "named": true
         },
         {
@@ -2622,6 +2681,10 @@
         },
         {
           "type": "listing_environment",
+          "named": true
+        },
+        {
+          "type": "lua_directive",
           "named": true
         },
         {
@@ -2960,6 +3023,10 @@
         },
         {
           "type": "listing_environment",
+          "named": true
+        },
+        {
+          "type": "lua_directive",
           "named": true
         },
         {
@@ -3587,6 +3654,10 @@
           "named": true
         },
         {
+          "type": "lua_directive",
+          "named": true
+        },
+        {
           "type": "math_delimiter",
           "named": true
         },
@@ -4026,6 +4097,36 @@
     }
   },
   {
+    "type": "lua_directive",
+    "named": true,
+    "fields": {
+      "command": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "\\directlua",
+            "named": false
+          },
+          {
+            "type": "\\latelua",
+            "named": false
+          }
+        ]
+      },
+      "content": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "curly_group_raw",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "math_delimiter",
     "named": true,
     "fields": {
@@ -4287,6 +4388,10 @@
           "named": true
         },
         {
+          "type": "lua_directive",
+          "named": true
+        },
+        {
           "type": "math_delimiter",
           "named": true
         },
@@ -4536,6 +4641,10 @@
         },
         {
           "type": "listing_environment",
+          "named": true
+        },
+        {
+          "type": "lua_directive",
           "named": true
         },
         {
@@ -5086,6 +5195,10 @@
           "named": true
         },
         {
+          "type": "lua_directive",
+          "named": true
+        },
+        {
           "type": "math_delimiter",
           "named": true
         },
@@ -5345,6 +5458,10 @@
         },
         {
           "type": "listing_environment",
+          "named": true
+        },
+        {
+          "type": "lua_directive",
           "named": true
         },
         {
@@ -5730,6 +5847,10 @@
           "named": true
         },
         {
+          "type": "lua_directive",
+          "named": true
+        },
+        {
           "type": "math_delimiter",
           "named": true
         },
@@ -5958,6 +6079,10 @@
         },
         {
           "type": "listing_environment",
+          "named": true
+        },
+        {
+          "type": "lua_directive",
           "named": true
         },
         {
@@ -6231,6 +6356,10 @@
           "named": true
         },
         {
+          "type": "lua_directive",
+          "named": true
+        },
+        {
           "type": "math_delimiter",
           "named": true
         },
@@ -6501,6 +6630,10 @@
           "named": true
         },
         {
+          "type": "lua_directive",
+          "named": true
+        },
+        {
           "type": "math_delimiter",
           "named": true
         },
@@ -6759,6 +6892,10 @@
           "named": true
         },
         {
+          "type": "lua_directive",
+          "named": true
+        },
+        {
           "type": "math_delimiter",
           "named": true
         },
@@ -7007,6 +7144,10 @@
           },
           {
             "type": "let_command_definition",
+            "named": true
+          },
+          {
+            "type": "lua_directive",
             "named": true
           },
           {
@@ -7359,6 +7500,10 @@
         },
         {
           "type": "let_command_definition",
+          "named": true
+        },
+        {
+          "type": "lua_directive",
           "named": true
         },
         {
@@ -8672,6 +8817,10 @@
   },
   {
     "type": "line_comment",
+    "named": true
+  },
+  {
+    "type": "no_curly_braces",
     "named": true
   },
   {

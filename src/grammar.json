@@ -1127,6 +1127,27 @@
         }
       ]
     },
+    "curly_group_raw": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "FIELD",
+          "name": "raw_content",
+          "content": {
+            "type": "SYMBOL",
+            "name": "curly_group_raw_content"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
     "curly_group_text_list": {
       "type": "SEQ",
       "members": [
@@ -1628,6 +1649,26 @@
           }
         }
       }
+    },
+    "curly_group_raw_content": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "no_curly_braces"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "curly_group_raw"
+          }
+        ]
+      }
+    },
+    "no_curly_braces": {
+      "type": "PATTERN",
+      "value": "[^\\{\\}]+"
     },
     "word": {
       "type": "PATTERN",
@@ -3400,6 +3441,10 @@
         {
           "type": "SYMBOL",
           "name": "tikz_library_import"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "lua_directive"
         },
         {
           "type": "SYMBOL",
@@ -5740,10 +5785,10 @@
         },
         {
           "type": "FIELD",
-          "name": "code",
+          "name": "content",
           "content": {
             "type": "SYMBOL",
-            "name": "curly_group"
+            "name": "curly_group_raw"
           }
         }
       ]
