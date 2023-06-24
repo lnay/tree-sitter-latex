@@ -5717,6 +5717,36 @@
           }
         }
       ]
+    },
+    "lua_directive": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "command",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "\\directlua"
+              },
+              {
+                "type": "STRING",
+                "value": "\\latelua"
+              }
+            ]
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "code",
+          "content": {
+            "type": "SYMBOL",
+            "name": "curly_group"
+          }
+        }
+      ]
     }
   },
   "extras": [
